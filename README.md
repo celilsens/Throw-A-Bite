@@ -1,10 +1,10 @@
-# 🥩 Feed the Beasts
+# 🥩 Throw A Bite
 
-**Feed the Beasts** is a fun and fast-paced arcade game where you throw food at hungry animals charging toward you to satisfy their hunger and survive as long as possible!
+**Feed the Beasts**, Throw A Bite is a fun and fast-paced arcade game where you throw food at hungry animals charging toward you to satisfy their hunger and survive as long as possible!
 
 ## 🎮 About the Game
 
-- You play as a brave farmer/food-thrower fending off enddles waves of incoming animals.
+- You play as a brave farmer/food-thrower fending off endless waves of incoming animals.
 - Your goal is to feed them before they escape.
 - Simple controls and increasingly intense action!
 

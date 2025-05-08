@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _gameOverScoreText;
     [SerializeField] private GameObject _gameOverUI;
+    [SerializeField] private GameObject _mainMenuUI;
 
     [Header("Settings")]
     [SerializeField] private int _currentHealth;
@@ -37,18 +38,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SetGameState(GameState.Play);
+        SetGameState(GameState.Pause);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        _healthText = GameObject.Find("PlayerUIHealthText").GetComponent<TMP_Text>();
-        _scoreText = GameObject.Find("PlayerUIScoreText").GetComponent<TMP_Text>();
-        _gameOverScoreText = GameObject.Find("GameOverScoreText").GetComponent<TMP_Text>();
-        _gameOverUI = GameObject.Find("GameOverUI");
-        _gameOverUI.SetActive(false);
-        _currentHealth = _maxHealth;
-        _currentScore = 0;
+        GetObjets();
+        PrepareScene();
         UpdateUI();
     }
 
@@ -75,6 +71,27 @@ public class GameManager : MonoBehaviour
             _gameOverScoreText.text = "Your Score: " + _currentScore.ToString();
             _gameOverUI.SetActive(true);
         }
+    }
+    private void GetObjets()
+    {
+        _mainMenuUI = GameObject.Find("MainMenuUI");
+        _healthText = GameObject.Find("PlayerUIHealthText").GetComponent<TMP_Text>();
+        _scoreText = GameObject.Find("PlayerUIScoreText").GetComponent<TMP_Text>();
+        _gameOverScoreText = GameObject.Find("GameOverScoreText").GetComponent<TMP_Text>();
+        _gameOverUI = GameObject.Find("GameOverUI");
+    }
+
+    private void PrepareScene()
+    {
+        _gameOverUI.SetActive(false);
+        _currentHealth = _maxHealth;
+        _currentScore = 0;
+    }
+
+    private void UpdateUI()
+    {
+        _healthText.text = "Health: " + _currentHealth;
+        _scoreText.text = "Score: " + _currentScore.ToString();
     }
 
     public void SetGameState(GameState newState)
@@ -129,11 +146,5 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver()
     {
         return _isGameOver;
-    }
-
-    private void UpdateUI()
-    {
-        _healthText.text = "Health: " + _currentHealth;
-        _scoreText.text = "Score: " + _currentScore.ToString();
     }
 }

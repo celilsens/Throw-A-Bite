@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SettingsUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] GameObject _settingsUI;
     [SerializeField] Button _settingsButton;
     [SerializeField] Button _resumeButton;

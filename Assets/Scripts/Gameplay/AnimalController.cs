@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AnimalController : MonoBehaviour
 {
+    [Header("Animal Settings")]
     [SerializeField] private float _speed = 40f;
     [SerializeField] private float _bottomDestroyRange = -10f;
 

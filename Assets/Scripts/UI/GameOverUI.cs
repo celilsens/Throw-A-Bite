@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] GameObject _gameOverUI;
     [SerializeField] Button _tryAgainButton;
     // [SerializeField] Button _returnToMenuButton;
@@ -17,7 +18,7 @@ public class GameOverUI : MonoBehaviour
     private void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameManager.Instance.SetGameState(GameState.Play);
+        GameManager.Instance.SetGameState(GameState.Pause);
     }
 
     // private void ReturnToMenu()

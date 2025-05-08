@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthPowerup : MonoBehaviour
 {
-    [SerializeField] GameManager _gameManager;
+    private GameManager _gameManager;
 
     private void Awake()
     {

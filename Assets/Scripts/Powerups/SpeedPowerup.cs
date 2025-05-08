@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpeedPowerup : MonoBehaviour
 {
+    [Header("Powerup Settings")]
     [SerializeField] PlayerController _playerController;
     [SerializeField] float _boostPower;
     [SerializeField] float _boostDuration;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [Header("Projectile Settings")]
     [SerializeField] private float _projectileSpeed = 40f;
     [SerializeField] private float _topDestroyRange = 20f;
 
